@@ -17,7 +17,7 @@ print('\n valores duplicados: ', netflix.duplicated().sum())
 # dice que hay 2 duplicados
 
 # quitamos los duplicados
-netflix_sd = netflix.drop_duplicates().copy()
+netflix_sd = netflix.drop_duplicates().fillna(0).copy()
 print('\n valores duplicados: ', netflix_sd.duplicated().sum())
 
 # tipo de valores que tenemos
@@ -28,7 +28,7 @@ print(netflix_sd.dtypes)
 netflix_sd["date_added"] = pd.to_datetime(netflix_sd["date_added"])
 
 # ¿son series?
-netflix_sd['serie_duration'] = netflix_sd['duration'].str.extract(r'(\d+) Season').fillna(0)
+netflix_sd['num_temporadas'] = netflix_sd['duration'].str.extract(r'(\d+) Season').fillna(0)
 
 # ¿son peliculas?
 netflix_sd['pelicula_duration'] = netflix_sd['duration'].str.extract(r'(\d+) min').fillna(0)
@@ -38,6 +38,12 @@ netflix_sd = netflix_sd.drop(columns=['duration', 'type'])
 col_cat = ['title', 'director', 'country', 'rating', 'listed_in']
 netflix_sd[col_cat] = netflix_sd[col_cat].astype('category')
 
-time_cat = ['serie_duration', 'pelicula_duration']
+time_cat = ['num_temporadas', 'pelicula_duration']
 netflix_sd[time_cat] = netflix_sd[time_cat].astype('int64')
 
+# comprobar que está bien la revisión por edades
+print(netflix_sd['rating'].value_counts())
+
+
+# estadísticas descriptivas
+print(netflix_sd.describe(include='all'))
