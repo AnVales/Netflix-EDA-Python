@@ -47,3 +47,9 @@ print(netflix_sd['rating'].value_counts())
 
 # estadísticas descriptivas
 print(netflix_sd.describe(include='all'))
+
+# ¿aumenta la duración de las películas con el tiempo?
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+movies = netflix_sd[netflix_sd['type'] == 'Movie'].copy()
