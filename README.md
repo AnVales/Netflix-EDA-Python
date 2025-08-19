@@ -1,6 +1,15 @@
-# Netflix-Data
-1. ¿Cuántos valores nulos hay en los datos? ¿Los puedes eliminar?
-2. ¿Cuántos valores incompletos encuentras en los datos? ¿Los puedes reemplazar?
-3. ¿Puedes eliminar columnas que no te aportan información? ¿Cuáles son? ¿Por qué las eliminarías?
-4. ¿Qué tipo de dato es la columna “release_year”? ¿Lo puedes convertir a integer?
-5. La columna “listed_in” contiene diferentes valores separados por coma, ¿Puedes crear una columna y quedarte con el primer valor?
+📖 Este repositorio contiene un análisis exploratorio de datos (EDA) del dataset de Netflix utilizando Python, Pandas, Matplotlib y Seaborn.
+
+Incluye:
+
+Carga y limpieza de datos → manejo de valores nulos, duplicados y tipos de datos.
+
+Transformación de variables → separación de series y películas, extracción de duración en minutos, categorización de columnas.
+
+Estadística descriptiva → conteo de clasificaciones por edad, distribución de categorías y tendencias generales.
+
+Análisis temporal → evolución de la duración promedio de las películas a lo largo de los años.
+
+Visualizaciones → gráficos comparativos de tendencias y métricas clave.
+
+👉 El objetivo es practicar data cleaning, EDA y visualización aplicados a un dataset real del catálogo de Netflix.
